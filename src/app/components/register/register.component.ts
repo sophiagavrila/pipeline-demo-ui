@@ -33,10 +33,9 @@ export class RegisterComponent {
     this.user.addresses.push(this.address);
     console.log(this.user)
 
+    // TODO: Resolve information received.
     this.userService.registerUser(this.user)
       .subscribe(data => this.clientMessage.message = `Success! Post reponded with ${data.json} status code`, 
       error => this.clientMessage.message = 'SOMETHING WENT WRONG!');
-  
   }
-
 }

@@ -1,0 +1,17 @@
+html, body {
+    height: 100%;
+    background-color: whitesmoke;
+}
+
+body {
+    padding-top: 70px;
+}
+
+.card {
+    padding: 1%;
+}
+
+img {
+    display: block;
+    height: 35em;
+}

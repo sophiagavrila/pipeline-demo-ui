@@ -1,0 +1,11 @@
+button {
+    margin-bottom: 1%;
+}
+
+#alt {
+    background-color: rgb(255,100,23);
+}
+
+#alt:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+  }

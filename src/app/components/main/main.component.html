@@ -1,0 +1,36 @@
+<div>
+    <div>
+        <h2 class="card-header text-center">{{ title }}</h2>
+    </div>
+
+    <div class="card-body">
+
+        <img class="mx-auto d-block" src={{image}} />
+
+        <div class="list-group">
+
+            <!-- https://www.geeksforgeeks.org/angular-ng-bootstrap-popover-component/ -->
+
+            <button type="button" class="btn btn-secondary btn-lg btn-block" placement="right"
+                ngbPopover="Query all Users from the database" popoverTitle="GET Request">
+                View All Users
+            </button>
+
+            <button type="button" class="btn btn-secondary btn-lg btn-block" placement="right"
+                ngbPopover="Persist a User to the database" popoverTitle="POST Request">
+                Register User
+            </button>
+
+            <button type="button" class="btn btn-secondary btn-lg btn-block" placement="right"
+                ngbPopover="Query all User from the database by extracting a path variable." popoverTitle="GET Request">
+                Find User by Username
+            </button>
+
+            <button type="button" class="btn btn-secondary btn-lg btn-block" placement="right"
+                ngbPopover="Delete User from the database by id" popoverTitle="DELETE Request">
+                Remove User
+            </button>
+
+        </div>
+    </div>
+</div>

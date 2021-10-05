@@ -2,8 +2,8 @@ import { hostURL } from './../../environments/environment';
 import { User } from 'src/app/models/user';
 import { ClientMessage } from './../models/client-message';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 const url = `${hostURL}:5000/api/users`;
@@ -14,26 +14,41 @@ const url = `${hostURL}:5000/api/users`;
 export class UserService {
 
   constructor(private http: HttpClient) { }
-  
+
   httpOptions = {
-    headers: new HttpHeaders({'Content-Type' : 'application/json'})
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
 
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-      console.error(error); // log it to the console if something goes wrong
-
-      // Let the app keep running by returning an empty result.
-      return of(result as T);
+  private handleError(httpError: HttpErrorResponse) {
+    if (httpError.error instanceof ErrorEvent) {
+      // A client-side or network error occurred. Handle it accordingly.
+      console.error('An error occurred:', httpError.error.message);
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong.
+      console.error(
+        `Backend returned code ${httpError.status}, ` +
+        `body was: ${httpError.error}`);
     }
+    // Return an observable with a user-facing error message.
+    return throwError('Something bad happened; please try again later.');
   }
 
-  public registerUser(user: User): Observable<Response>  {
+  // POST
+  public registerUser(user: User): Observable<User> {
     // this will return a client message if we are successfully able to POST a hero to our server 
-    return this.http.post<Response>(`${url}/add`, user, this.httpOptions)
-    .pipe(
-      catchError(this.handleError<Response>('cannot register user!'))
-    )
+    return this.http.post<User>(`${url}/add`, user, this.httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      )
+  }
+
+  // GET
+  public findAllUsers(): Observable<User[]> {
+    return this.http.get<User[]>(url)
+      .pipe(
+        catchError(this.handleError)
+      )
   }
 
 }

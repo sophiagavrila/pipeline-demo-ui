@@ -19,10 +19,10 @@ export class RegisterComponent {
    * where all the properties should be initialized in the constructor. 
    * A workaround is to add the ! as a postfix to the variable name:
    **/
-  public user = new User('', '', '', '', '', [])
+  public user = new User(0, '', '', '', '', '', [])
 
-
-  public address= new Address ('', '', '', '')
+  public address = new Address('', '', '', '')
+  
   public clientMessage = new ClientMessage('');
 
   // constructor injection for UserService
@@ -31,11 +31,12 @@ export class RegisterComponent {
   public registerUserFromService(): void {
 
     this.user.addresses.push(this.address);
-    console.log(this.user)
 
     // TODO: Resolve information received.
     this.userService.registerUser(this.user)
-      .subscribe(data => this.clientMessage.message = `Success! Post reponded with ${data.json} status code`, 
-      error => this.clientMessage.message = 'SOMETHING WENT WRONG!');
+      .subscribe(
+        data => this.clientMessage.message = `Successfully inserted ${data.firstName}`,
+        error => this.clientMessage.message = `Something went wrong. Error: ${error}`
+      );
   }
 }

@@ -8,13 +8,15 @@ import { NavComponent } from './components/nav/nav.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
+import { AllComponent } from './components/all/all.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     NavComponent,
-    RegisterComponent
+    RegisterComponent,
+    AllComponent
   ],
   imports: [
     BrowserModule,

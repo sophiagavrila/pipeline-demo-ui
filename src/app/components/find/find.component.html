@@ -1,1 +1,31 @@
-<p>find works!</p>
+<div>
+    <div>
+        <h2 class="card-header text-center">{{ title }}</h2>
+    </div>
+
+    <div class="card-body">
+
+        <h5 class="card-title">Enter the Username of the User to Find</h5>
+        <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-xlg">Username</span>
+            </div>
+            <input [(ngModel)]="username" name="username" type="text" class="form-control" aria-label="Large"
+                aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <button type="button" class="btn btn-secondary btn-lg" (click)="findUser()">Find</button>
+
+        <!-- Directives preceded with a * like *ngIf , *ngFor , and *ngSwitchCase are 
+            structural directives. Structural directives modify the DOM by adding or 
+            removing certain elements. If an element is removed, it is completely 
+            removed rather than just being hidden -->
+
+        <div id="user-div" *ngIf="user.id > 0">
+            <li class=list-group-item>Id : {{ user.id }} </li>
+            <li class=list-group-item>First Name: {{ user.firstName }} </li>
+            <li class=list-group-item>Last Name: {{ user.lastName }}</li>
+            <li class=list-group-item>Username: {{ user.username}}</li>
+        </div>
+
+    </div>
+</div>

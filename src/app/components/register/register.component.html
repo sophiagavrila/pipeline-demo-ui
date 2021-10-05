@@ -114,9 +114,9 @@
             </div>
             <button type="submit" class="btn btn-secondary" (click)="registerUserFromService()">Register</button>
 
-            <div>
+            <div *ngIf="clientMessage.message.length > 0" class="alert alert-success" role="alert">
                 {{ clientMessage.message }}
-            </div>
+              </div>
         </form>
     </div>
 </div>

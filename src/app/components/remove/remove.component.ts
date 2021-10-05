@@ -22,6 +22,8 @@ export class RemoveComponent{
     this.userService.deleteUser(this.userId);
     this.clientMessage.message = 'Successfully deleted User'
 
+    this.clientMessage.message = `Removed User with id ${this.userId}`
+
   }
   
 }

@@ -12,7 +12,7 @@ export class AllComponent implements OnInit {
 
   title = "All Users";
   public users: User[] = [];
-  public clientMessage: ClientMessage = new ClientMessage('Sorry, no heroes to display');
+  public clientMessage: ClientMessage = new ClientMessage('Sorry, no users to display');
 
 
   constructor(private userService: UserService) { }

@@ -1,4 +1,4 @@
-import { hostURL } from './../../environments/environment';
+import { hostURL, awsUrl } from './../../environments/environment';
 import { User } from 'src/app/models/user';
 import { ClientMessage } from './../models/client-message';
 import { Injectable } from '@angular/core';
@@ -6,7 +6,8 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-const url = `${hostURL}:5000/api/users`;
+const oldUrl = `${hostURL}:5000/api/users`;
+const url = `${awsUrl}/api/users`;
 
 @Injectable({
   providedIn: 'root'
@@ -43,12 +44,21 @@ export class UserService {
       )
   }
 
-  // GET
+  // GET - all
   public findAllUsers(): Observable<User[]> {
     return this.http.get<User[]>(url)
       .pipe(
         catchError(this.handleError)
       )
+  }
+
+  // GET - by username
+  public findByUsername(username: string): Observable<User> {
+    return this.http.get<User>(`${url}/find/${username}`)
+      .pipe(
+        catchError(this.handleError)
+      )
+
   }
 
   // DELETE

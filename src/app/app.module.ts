@@ -9,6 +9,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule } from '@angular/forms';
 import { AllComponent } from './components/all/all.component';
+import { FindComponent } from './components/find/find.component';
+import { RemoveComponent } from './components/remove/remove.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { AllComponent } from './components/all/all.component';
     MainComponent,
     NavComponent,
     RegisterComponent,
-    AllComponent
+    AllComponent,
+    FindComponent,
+    RemoveComponent
   ],
   imports: [
     BrowserModule,

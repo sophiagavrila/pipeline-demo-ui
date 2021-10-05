@@ -51,4 +51,15 @@ export class UserService {
       )
   }
 
+  // DELETE
+  deleteUser(id: number) {
+    console.log('deleting...')
+    let deleteUrl = `${url}/${id}`
+    console.log(deleteUrl)
+    this.http.request('delete', deleteUrl).subscribe(console.log);
+    // return this.http.delete(newUrl, this.httpOptions)
+    //   .pipe(catchError(this.handleError));
+  }
+
+
 }

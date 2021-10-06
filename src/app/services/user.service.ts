@@ -1,15 +1,10 @@
+import { awsUrl,  } from './../../environments/environment';
 import { User } from 'src/app/models/user';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-const hostname = window.location.hostname;
-const hostURL = `http://${hostname}`;
-
-const awsUrl = `http://api-env.eba-udukpxjr.us-east-2.elasticbeanstalk.com/`
-
-const oldUrl = `${hostURL}:5000/api/users`;
 const url = `${awsUrl}/api/users`;
 
 @Injectable({

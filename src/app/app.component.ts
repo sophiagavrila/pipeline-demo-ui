@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { hostURL } from './../environments/environment';
-
 
 @Component({
   selector: 'app-root',
@@ -9,12 +7,5 @@ import { hostURL } from './../environments/environment';
 })
 export class AppComponent {
   title = 'Rest API Frontend';
-  hostURL = hostURL;
-
-  ngOnInit() {
-
-    console.log(hostURL);
-
-  }
 
 }

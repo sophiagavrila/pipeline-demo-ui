@@ -5,12 +5,21 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-const url = `${awsUrl}/api/users`;
+const url = `${awsUrl}/api/users`; // this is to spring 
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+
+  // facilitates getting json from an api and sending json to an api https://deckofcardsapi.com/
+
+  // DekcOfCards API --> Angular (processing did the user win or lose this round?) --> Spring Boot API
+
+
+
+
+
 
   constructor(private http: HttpClient) { }
 

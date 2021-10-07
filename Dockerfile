@@ -10,6 +10,9 @@ COPY . .
 
 RUN npm run build --prod
 
+# pass off the static resources (everything in my dist folder)
+# to a web server
 FROM nginx:1.15.8-alpine
 
+# we pass our ditributable artifact to Nginx to host
 COPY --from=builder /usr/src/app/dist/rest-api-frontend/ /usr/share/nginx/html

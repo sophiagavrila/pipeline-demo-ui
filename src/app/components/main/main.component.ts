@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  title = "User Portal"
+  title = "User Portal TEST!!!!!!!"
   image = 'https://freesvg.org/img/black_orange_men_cloud.png'
 
   constructor() { }

@@ -22,7 +22,7 @@ phases:
         # ng build is the command you use when you're ready to build your app 
         # and deploy it. The CLI will analyze the application and build the 
         # files, all while optimizing the application as best as it can.
-        - ng build
+        - ng build --prod
 artifacts:
     files:
         - '**/*'

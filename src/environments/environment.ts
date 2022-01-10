@@ -7,8 +7,8 @@ export const environment = {
 };
 
 // capture the server host name and export the protocol + host
-const hostname = window.location.hostname;
-export const hostURL = `http://${hostname}`;
+const hostname = window.location.hostname; // .host would return the port
+export const hostURL = `http://${hostname}`; // hostname will = "localhost" if running locally
 
 export const awsUrl = `http://api-env.eba-udukpxjr.us-east-2.elasticbeanstalk.com/`
 

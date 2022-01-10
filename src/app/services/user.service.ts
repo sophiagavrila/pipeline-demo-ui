@@ -1,11 +1,12 @@
-import { awsUrl,  } from './../../environments/environment';
+import { awsUrl, hostURL } from './../../environments/environment';
 import { User } from 'src/app/models/user';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-const url = `${awsUrl}/api/users`; // this is to spring 
+// const url = `${awsUrl}/api/users`; // this is to spring
+const url = `${hostURL}:5000/api/users`;
 
 @Injectable({
   providedIn: 'root'
@@ -44,7 +45,7 @@ export class UserService {
 
   // POST
   public registerUser(user: User): Observable<User> {
-    // this will return a client message if we are successfully able to POST a hero to our server 
+    // this will return a client message if we are successfully able to POST a hero to our server
     return this.http.post<User>(`${url}/add`, user, this.httpOptions)
       .pipe(
         catchError(this.handleError)

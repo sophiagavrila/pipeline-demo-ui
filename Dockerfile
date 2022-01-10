@@ -16,3 +16,7 @@ FROM nginx:1.15.8-alpine
 
 # we pass our ditributable artifact to Nginx to host
 COPY --from=builder /usr/src/app/dist/rest-api-frontend/ /usr/share/nginx/html
+
+# To run the container, after building the image,
+# run docker run -p 8080:80 <name-of-image:version>
+# (80 is the default nginx port)

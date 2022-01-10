@@ -12,7 +12,7 @@ export class FindComponent {
 
   title = "Find By Username"
   username: string  = '';
-  public user = new User(0, '', '', '', '', '', []) 
+  public user = new User(0, '', '', '', '', '', [], [])
 
   constructor(private userService: UserService) { }
 
@@ -20,9 +20,9 @@ export class FindComponent {
 
     this.userService.findByUsername(this.username)
       .subscribe(data => this.user = data)
-    
-    
+
+
   }
-  
+
 
 }

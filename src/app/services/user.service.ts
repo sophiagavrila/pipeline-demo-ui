@@ -17,11 +17,6 @@ export class UserService {
 
   // DekcOfCards API --> Angular (processing did the user win or lose this round?) --> Spring Boot API
 
-
-
-
-
-
   constructor(private http: HttpClient) { }
 
   httpOptions = {

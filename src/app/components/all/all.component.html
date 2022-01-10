@@ -13,8 +13,21 @@
             <li class=list-group-item>First Name: {{ u.firstName }} </li>
             <li class=list-group-item>Last Name: {{ u.lastName }}</li>
             <li class=list-group-item>Username: {{ u.username}}</li>
-        
+
+            <!-- Add after Pokemon Impl -->
+            <div *ngIf="u.pokemon.length == 0; else noPokemon"></div>
+              <ul *ngFor="let p of u.pokemon" class="list-group-item">
+                <li class=list-group-item>Id : {{ p.id }} </li>
+                <li class=list-group-item>Name: {{ u.firstName }} </li>
+                <img src={{ p.spite }} />
+              </ul>
             </ul>
+
+            <ng-template #noPokemon>
+              Content to render when condition is false.
+            </ng-template>
+
+
 
         <div>
             <button class="btn btn-primary btn-center" (click)="findAllUsersFromService()">Fetch Users!</button>

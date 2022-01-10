@@ -1,3 +1,4 @@
+import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { AllComponent } from './components/all/all.component';
 import { RegisterComponent } from './components/register/register.component';
 import { NgModule } from '@angular/core';
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'all', component: AllComponent },
   { path: 'remove', component: RemoveComponent },
-  { path: 'find', component: FindComponent }
+  { path: 'find', component: FindComponent },
+  { path: 'pokemon', component: PokemonComponent }
 ];
 
 @NgModule({

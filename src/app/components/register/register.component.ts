@@ -16,13 +16,13 @@ export class RegisterComponent {
 
   /**
    * This is because TypeScript 2.7 includes a strict class checking
-   * where all the properties should be initialized in the constructor. 
+   * where all the properties should be initialized in the constructor.
    * A workaround is to add the ! as a postfix to the variable name:
    **/
-  public user = new User(0, '', '', '', '', '', [])
+  public user = new User(0, '', '', '', '', '', [], [])
 
   public address = new Address('', '', '', '')
-  
+
   public clientMessage = new ClientMessage('');
 
   // constructor injection for UserService

@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { AllComponent } from './components/all/all.component';
 import { FindComponent } from './components/find/find.component';
 import { RemoveComponent } from './components/remove/remove.component';
+import { PokemonComponent } from './components/pokemon/pokemon.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RemoveComponent } from './components/remove/remove.component';
     RegisterComponent,
     AllComponent,
     FindComponent,
-    RemoveComponent
+    RemoveComponent,
+    PokemonComponent
   ],
   imports: [
     BrowserModule,

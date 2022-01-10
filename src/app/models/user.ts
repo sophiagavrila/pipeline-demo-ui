@@ -2,44 +2,63 @@
  * Notice the use of interfaces, not classes here.
  */
 export class User {
+  id: number;
+  firstName: string;
+  lastName: string;
+  username: string;
+  password: string;
+  email: string;
+  addresses: any[];
+  pokemon: any[];
 
-    id: number;
-    firstName: string;
-    lastName: string;
-    username: string;
-    password: string;
-    email: string;
-    addresses: any[];
-
-
-    constructor(id:number, firstName: string, lastName: string, username: string, password: string, email: string, addresses: any[]) {
-        this.id = id;
-        this.firstName= firstName;
-        this.lastName = lastName;
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.addresses = addresses;
-    }
-
-
+  constructor(
+    id: number,
+    firstName: string,
+    lastName: string,
+    username: string,
+    password: string,
+    email: string,
+    addresses: any[],
+    pokemon: any[]
+  ) {
+    this.id = id;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.username = username;
+    this.password = password;
+    this.email = email;
+    this.addresses = addresses;
+    this.pokemon = pokemon;
+  }
 }
 
 export class Address {
+  street: string;
+  secondary: string;
+  state: string;
+  city: string;
 
-    street: string;
-    secondary: string;
-    state: string;
-    city: string;
-
-    constructor( street: string, secondary: string, state: string, city: string) {
-        
-        this.street = street,
-        this.secondary = secondary,
-        this.state = state, 
-        this.city = city;
-    }
+  constructor(street: string, secondary: string, state: string, city: string) {
+    (this.street = street),
+      (this.secondary = secondary),
+      (this.state = state),
+      (this.city = city);
+  }
 }
+
+export class Pokemon {
+
+  p_id: number;
+  p_name: string;
+  sprite: string;
+
+  constructor( p_id: number, p_name: string, sprite: string, ) {
+    (this.p_id = p_id),
+    (this.p_name = p_name),
+    (this.sprite = sprite);
+  }
+}
+
 
 
 /**

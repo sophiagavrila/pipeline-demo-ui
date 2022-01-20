@@ -5,7 +5,7 @@ export const environment = {
 const hostname = window.location.hostname;
 export const hostURL = `http://${hostname}`; // hostname will = "localhost" if running locally
 
-export const awsUrl = `http://api-env.eba-udukpxjr.us-east-2.elasticbeanstalk.com/`
+export const awsUrl = `http://completeapibeanstalk-env.eba-sfn83npg.us-east-1.elasticbeanstalk.com/api`
 
   /**
    *
